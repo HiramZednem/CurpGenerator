@@ -1,0 +1,48 @@
+
+<div class="template">
+
+  <mat-card class="card">
+    <mat-card-header><h1>Generador de CURP</h1></mat-card-header>
+    <mat-card-content>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre(s)</mat-label>
+          <input matInput placeholder="Carlos Hiram" required [(ngModel)]="persona.nombre">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Apellido Paterno</mat-label>
+          <input matInput placeholder="Culebro" required [(ngModel)]="persona.apellidoPaterno">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Apellido Materno</mat-label>
+          <input matInput placeholder="Mendez" required [(ngModel)]="persona.apellidoMaterno">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Fecha de nacimiento</mat-label>
+          <input matInput [matDatepicker]="picker" required [(ngModel)]="persona.fechaNacimiento">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Lugar de nacimiento</mat-label>
+          <input matInput disabled value="Chiapas">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Genero</mat-label>
+          <select matNativeControl required [(ngModel)]="persona.genero">
+            <option value="m">Masculino</option>
+            <option value="f">Femenino</option>
+          </select>
+        </mat-form-field>
+      
+        <button mat-raised-button color="primary" class="example-full-width" (click)="onSubmit()">Generar CURP</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>
